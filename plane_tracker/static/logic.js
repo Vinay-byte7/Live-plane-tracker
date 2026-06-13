@@ -27,7 +27,12 @@ const searchButton = document.getElementById('searchButton');
 
 searchButton.addEventListener('click', async () => {
     let searchText = searchInput.value.trim();
-    if (searchText !== "") {
+    let a = 1;
+    if(searchText.toLowerCase() == "all"){
+        a = 2;
+        PlaneData();
+    }
+    if (searchText !== "" && a != 2) {
         console.log("Searching for:", searchText);
         searchButton.innerHTML = '<i class="fas fa-spinner fa-spin"></i>';
         searchButton.disabled = true;
